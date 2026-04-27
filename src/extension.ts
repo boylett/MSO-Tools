@@ -7,6 +7,8 @@ import { ConditionalItalicDecorator } from './decorations/conditional-italic';
 import { MsoFoldingProvider } from './folding';
 import { MsoMatchingHighlightProvider } from './highlight';
 import { TableRoleCodeActionProvider } from './code-actions/table-role';
+import { MsoCssCompletionProvider } from './completion/mso-css-completion';
+import { ConditionalCompletionProvider } from './completion/conditional-completion';
 import { registerCssCustomData, unregisterCssCustomData } from './util/css-custom-data';
 
 const HTML_LANGUAGES: vscode.DocumentSelector = [
@@ -51,6 +53,8 @@ export function activate(context: vscode.ExtensionContext): void {
     vscode.languages.registerHoverProvider(HTML_LANGUAGES, new ConditionalHoverProvider()),
     vscode.languages.registerFoldingRangeProvider(HTML_LANGUAGES, new MsoFoldingProvider()),
     vscode.languages.registerDocumentHighlightProvider(HTML_LANGUAGES, new MsoMatchingHighlightProvider()),
+    vscode.languages.registerCompletionItemProvider(HTML_LANGUAGES, new MsoCssCompletionProvider(), '-', 'm'),
+    vscode.languages.registerCompletionItemProvider(HTML_LANGUAGES, new ConditionalCompletionProvider(), '!', '['),
     vscode.languages.registerCodeActionsProvider(
       HTML_LANGUAGES,
       new TableRoleCodeActionProvider(),

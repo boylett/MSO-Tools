@@ -33,6 +33,13 @@ Click inside any of the following and the matching counterpart lights up the sam
 
 Self-closing VML and Office tags (e.g. `<o:AllowPNG/>`, `<v:fill/>`) self-highlight when selected.
 
+### Autocomplete
+
+- **HTML autocomplete** for VML, Office, and `<xml>` tags - typing `<v:`, `<o:`, `<w:`, or `<xml` surfaces the relevant tags with descriptions and known attributes. Powered by VSCode's `html.customData` mechanism.
+- **HTML autocomplete** for `xmlns:v`, `xmlns:o`, and `xmlns:w` namespace declarations on the `<html>` element.
+- **MSO conditional comment templates** appear in the completion list when typing `<!--`, `<!--[`, or `<!`. Pick from `<!--[if mso]>`, `<!--[if !mso]><!-->`, `<!--[if gte mso 9]>`, `<!--[if lte mso 11]>`, and `<!--[if IE]>`.
+- **MSO CSS property autocomplete** in standalone `.css` files (via the registered MSO custom data file) and inside HTML/PHP `<style>` blocks and `style="..."` attributes (via a dedicated completion provider).
+
 ### Hover documentation
 
 Hover any of the following for a description, usage notes, and an example:

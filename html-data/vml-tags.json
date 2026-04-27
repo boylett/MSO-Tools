@@ -1,0 +1,324 @@
+{
+  "version": 1.1,
+  "tags": [
+    {
+      "name": "xml",
+      "description": "Generic XML island used inside an MSO conditional comment to wrap Office settings (e.g. `<o:OfficeDocumentSettings>`). Outlook reads these settings; other clients ignore the block because it is gated by `<!--[if gte mso 9]>`.",
+      "attributes": []
+    },
+    {
+      "name": "v:rect",
+      "description": "VML rectangle shape. Most commonly used to render background images in Outlook via `<v:fill type=\"frame\">`.",
+      "attributes": [
+        { "name": "fillcolor" },
+        { "name": "stroke" },
+        { "name": "strokecolor" },
+        { "name": "strokeweight" },
+        { "name": "filled" },
+        { "name": "fill" },
+        { "name": "style" },
+        { "name": "href" }
+      ]
+    },
+    {
+      "name": "v:roundrect",
+      "description": "VML rectangle with rounded corners. The cornerstone of bulletproof Outlook buttons.",
+      "attributes": [
+        { "name": "arcsize" },
+        { "name": "fillcolor" },
+        { "name": "stroke" },
+        { "name": "strokecolor" },
+        { "name": "strokeweight" },
+        { "name": "href" },
+        { "name": "style" }
+      ]
+    },
+    {
+      "name": "v:oval",
+      "description": "VML ellipse or circle shape.",
+      "attributes": [
+        { "name": "fillcolor" },
+        { "name": "stroke" },
+        { "name": "strokecolor" },
+        { "name": "style" }
+      ]
+    },
+    {
+      "name": "v:line",
+      "description": "VML straight line between two points.",
+      "attributes": [
+        { "name": "from" },
+        { "name": "to" },
+        { "name": "strokecolor" },
+        { "name": "strokeweight" }
+      ]
+    },
+    {
+      "name": "v:arc",
+      "description": "VML circular arc.",
+      "attributes": [
+        { "name": "startangle" },
+        { "name": "endangle" },
+        { "name": "strokecolor" },
+        { "name": "fillcolor" },
+        { "name": "style" }
+      ]
+    },
+    {
+      "name": "v:curve",
+      "description": "VML Bezier curve defined by two control points and an endpoint.",
+      "attributes": [
+        { "name": "from" },
+        { "name": "control1" },
+        { "name": "control2" },
+        { "name": "to" }
+      ]
+    },
+    {
+      "name": "v:polyline",
+      "description": "VML connected sequence of line segments.",
+      "attributes": [
+        { "name": "points" },
+        { "name": "strokecolor" },
+        { "name": "strokeweight" }
+      ]
+    },
+    {
+      "name": "v:fill",
+      "description": "Defines the fill of a parent VML shape. Use `type=\"frame\"` with `src` to render a background image in Outlook.",
+      "attributes": [
+        { "name": "type" },
+        { "name": "src" },
+        { "name": "color" },
+        { "name": "color2" },
+        { "name": "opacity" },
+        { "name": "angle" },
+        { "name": "aspect" }
+      ]
+    },
+    {
+      "name": "v:stroke",
+      "description": "Defines the stroke (outline) of a parent VML shape.",
+      "attributes": [
+        { "name": "color" },
+        { "name": "weight" },
+        { "name": "dashstyle" },
+        { "name": "endcap" },
+        { "name": "joinstyle" },
+        { "name": "opacity" }
+      ]
+    },
+    {
+      "name": "v:shadow",
+      "description": "Drop shadow effect on a parent VML shape.",
+      "attributes": [
+        { "name": "on" },
+        { "name": "color" },
+        { "name": "offset" },
+        { "name": "opacity" },
+        { "name": "type" }
+      ]
+    },
+    {
+      "name": "v:image",
+      "description": "VML image. Useful for images that need exact positioning in Outlook.",
+      "attributes": [
+        { "name": "src" },
+        { "name": "style" },
+        { "name": "cropleft" },
+        { "name": "cropright" },
+        { "name": "croptop" },
+        { "name": "cropbottom" }
+      ]
+    },
+    {
+      "name": "v:imagedata",
+      "description": "Image data reference inside a parent VML shape (typically `<v:shape>`).",
+      "attributes": [
+        { "name": "src" },
+        { "name": "cropleft" },
+        { "name": "cropright" },
+        { "name": "croptop" },
+        { "name": "cropbottom" },
+        { "name": "embosscolor" }
+      ]
+    },
+    {
+      "name": "v:shape",
+      "description": "VML custom shape defined by a path or a referenced shapetype.",
+      "attributes": [
+        { "name": "type" },
+        { "name": "style" },
+        { "name": "coordsize" },
+        { "name": "path" },
+        { "name": "fillcolor" }
+      ]
+    },
+    {
+      "name": "v:shapetype",
+      "description": "Reusable VML shape definition referenced by `<v:shape type>`.",
+      "attributes": [
+        { "name": "id" },
+        { "name": "coordsize" },
+        { "name": "path" }
+      ]
+    },
+    {
+      "name": "v:textbox",
+      "description": "Text container inside a VML shape. `inset` controls internal padding.",
+      "attributes": [
+        { "name": "inset" },
+        { "name": "style" }
+      ]
+    },
+    {
+      "name": "v:textpath",
+      "description": "VML text rendered along a path - rarely used in modern email.",
+      "attributes": [
+        { "name": "string" },
+        { "name": "style" }
+      ]
+    },
+    {
+      "name": "v:group",
+      "description": "Groups child VML shapes so they share a coordinate system.",
+      "attributes": [
+        { "name": "coordsize" },
+        { "name": "coordorigin" },
+        { "name": "style" }
+      ]
+    },
+    {
+      "name": "v:background",
+      "description": "VML background shape for the document. Limited support in Outlook.",
+      "attributes": [
+        { "name": "fill" },
+        { "name": "fillcolor" }
+      ]
+    },
+    {
+      "name": "v:formulas",
+      "description": "Container for `<v:f>` formula definitions used in custom VML shapes.",
+      "attributes": []
+    },
+    {
+      "name": "v:handles",
+      "description": "Container for VML shape adjustment handles.",
+      "attributes": []
+    },
+    {
+      "name": "v:path",
+      "description": "Defines a custom VML drawing path.",
+      "attributes": [
+        { "name": "v" },
+        { "name": "limo" },
+        { "name": "textboxrect" }
+      ]
+    },
+    {
+      "name": "o:OfficeDocumentSettings",
+      "description": "Container for Outlook/Office rendering settings. Place inside an `<xml>` block within an `<!--[if gte mso 9]>` conditional comment.",
+      "attributes": []
+    },
+    {
+      "name": "o:AllowPNG",
+      "description": "Tells Outlook to render PNG images (rather than converting them to a different format). Self-closing flag tag.",
+      "void": true,
+      "attributes": []
+    },
+    {
+      "name": "o:PixelsPerInch",
+      "description": "Sets the DPI Outlook uses to render the document. `96` matches standard web rendering and prevents Outlook from up-scaling images on high-DPI displays.",
+      "attributes": []
+    },
+    {
+      "name": "o:DoNotRelyOnCSS",
+      "description": "Forces Outlook to render using its legacy Word engine rather than relying on CSS. Rarely needed in modern email.",
+      "void": true,
+      "attributes": []
+    },
+    {
+      "name": "o:TargetScreenSize",
+      "description": "Hints to Outlook the target screen size for layout decisions.",
+      "attributes": []
+    },
+    {
+      "name": "o:UseFELayout",
+      "description": "Enables Far-East layout features for Asian language rendering.",
+      "void": true,
+      "attributes": []
+    },
+    {
+      "name": "o:OLEObject",
+      "description": "Embedded OLE object reference - used for legacy embedded controls.",
+      "attributes": [
+        { "name": "Type" },
+        { "name": "ProgID" },
+        { "name": "ShapeID" }
+      ]
+    },
+    {
+      "name": "o:lock",
+      "description": "Locks shape transformations on a parent VML shape.",
+      "void": true,
+      "attributes": [
+        { "name": "v:ext" },
+        { "name": "aspectratio" },
+        { "name": "rotation" },
+        { "name": "position" }
+      ]
+    },
+    {
+      "name": "o:p",
+      "description": "Office paragraph marker. Outlook inserts these around content - usually safe to leave alone.",
+      "attributes": []
+    },
+    {
+      "name": "o:shapedefaults",
+      "description": "Default attribute values applied to all VML shapes without explicit values.",
+      "attributes": [
+        { "name": "spidmax" },
+        { "name": "fill" },
+        { "name": "fillcolor" },
+        { "name": "stroke" },
+        { "name": "strokecolor" }
+      ]
+    },
+    {
+      "name": "o:shapelayout",
+      "description": "Layout container for shape ID maps.",
+      "attributes": [
+        { "name": "v:ext" }
+      ]
+    },
+    {
+      "name": "o:idmap",
+      "description": "Maps shape IDs to layout regions.",
+      "void": true,
+      "attributes": [
+        { "name": "v:ext" },
+        { "name": "data" }
+      ]
+    },
+    {
+      "name": "w:anchorlock",
+      "description": "Anchors a VML shape so its full area is clickable. Required inside bulletproof button markup so the entire `<v:roundrect>` becomes a hit target.",
+      "void": true,
+      "attributes": []
+    }
+  ],
+  "globalAttributes": [
+    {
+      "name": "xmlns:v",
+      "description": "VML namespace declaration. Required on `<html>` when using `<v:*>` tags. Use the value `urn:schemas-microsoft-com:vml`."
+    },
+    {
+      "name": "xmlns:o",
+      "description": "Office namespace declaration. Required on `<html>` when using `<o:*>` tags. Use the value `urn:schemas-microsoft-com:office:office`."
+    },
+    {
+      "name": "xmlns:w",
+      "description": "Word namespace declaration. Required on `<html>` when using `<w:*>` tags. Use the value `urn:schemas-microsoft-com:office:word`."
+    }
+  ]
+}

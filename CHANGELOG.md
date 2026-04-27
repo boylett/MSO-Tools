@@ -6,6 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-04-27
+
+### Added
+
+- HTML autocomplete for VML and Office tags (`<v:rect>`, `<v:roundrect>`, `<v:fill>`, `<o:OfficeDocumentSettings>`, `<o:AllowPNG/>`, `<w:anchorlock/>`, etc.) and the bare `<xml>` island, contributed via VSCode's `html.customData` mechanism. Each tag is offered with its description and known attributes.
+- HTML autocomplete for `xmlns:v`, `xmlns:o`, and `xmlns:w` namespace declarations on the `<html>` element.
+- Completion provider for MSO conditional comment templates - typing `<!--`, `<!--[`, or `<!` surfaces snippets for `<!--[if mso]>`, `<!--[if !mso]><!-->`, `<!--[if gte mso 9]>`, `<!--[if lte mso 11]>`, and `<!--[if IE]>`.
+- Completion provider for `mso-*` CSS properties inside HTML/PHP `<style>` blocks and `style="..."` attributes. Standalone `.css` files keep the existing autocomplete via the registered custom data file; this fills the gap for embedded CSS, which VSCode's HTML extension validates and completes through a separate pipeline that doesn't read `css.customData`.
+
 ## [1.0.1] - 2026-04-27
 
 ### Fixed
