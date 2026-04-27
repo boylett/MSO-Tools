@@ -1,0 +1,26 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "scopeName": "mso.css.injection",
+  "injectionSelector": "L:source.css -comment, L:source.css.embedded.html -comment, L:text.html.basic -comment, L:text.html.derivative -comment, L:text.html.php -comment",
+  "patterns": [
+    {
+      "comment": "Known mso-* CSS properties",
+      "name": "support.type.property-name.mso.css",
+      "match": "(?<![\\w-])(mso-(?:ansi-font-size|ascii-font-family|bidi-font-family|border-alt|border-top-alt|border-right-alt|border-bottom-alt|border-left-alt|cellspacing|element|element-anchor-horizontal|element-anchor-vertical|element-frame-height|element-frame-width|element-left|element-top|element-wrap|fareast-font-family|fareast-language|font-alt|font-charset|font-kerning|font-pitch|font-signature|generic-font-family|hansi-font-family|height-percent|height-relative|hide|level-number-format|line-height-alt|line-height-rule|list|margin-bottom-alt|margin-left-alt|margin-right-alt|margin-top-alt|padding-alt|padding-bottom-alt|padding-left-alt|padding-right-alt|padding-top-alt|position-horizontal|position-horizontal-relative|position-vertical|position-vertical-relative|special-format|style-name|style-noshow|style-parent|style-priority|style-qformat|style-type|style-unhide|table-bspace|table-lspace|table-rspace|table-tspace|text-raise|width-percent|width-relative))(?=\\s*:)"
+    },
+    {
+      "comment": "Unrecognised mso-* fallback - still themed but with a softer scope",
+      "name": "support.type.property-name.mso.unknown.css",
+      "match": "(?<![\\w-])(mso-[a-z][a-z0-9-]*)(?=\\s*:)"
+    },
+    {
+      "comment": "Yahoo Mail conditional CSS hack - @media screen yahoo {}",
+      "match": "(@media)\\s+(screen)\\s+(yahoo)\\b",
+      "captures": {
+        "1": { "name": "keyword.control.at-rule.media.css" },
+        "2": { "name": "support.constant.media.css" },
+        "3": { "name": "keyword.control.directive.conditional.yahoo" }
+      }
+    }
+  ]
+}

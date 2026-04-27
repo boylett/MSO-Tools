@@ -1,0 +1,68 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "scopeName": "vml.injection",
+  "injectionSelector": "L:text.html, L:text.html.basic, L:text.html.derivative, L:text.html.php",
+  "patterns": [
+    { "include": "#vml-close-tag" },
+    { "include": "#vml-open-tag" },
+    { "include": "#xml-island" }
+  ],
+  "repository": {
+    "vml-open-tag": {
+      "name": "meta.tag.vml",
+      "begin": "(<)([vow]:[A-Za-z][A-Za-z0-9_-]*)",
+      "beginCaptures": {
+        "1": { "name": "punctuation.definition.tag.begin.vml" },
+        "2": { "name": "entity.name.tag.vml" }
+      },
+      "end": "(/?)(>)",
+      "endCaptures": {
+        "1": { "name": "punctuation.definition.tag.self-close.vml" },
+        "2": { "name": "punctuation.definition.tag.end.vml" }
+      },
+      "patterns": [ { "include": "#vml-attributes" } ]
+    },
+    "vml-close-tag": {
+      "name": "meta.tag.close.vml",
+      "match": "(</)([vow]:[A-Za-z][A-Za-z0-9_-]*)\\s*(>)",
+      "captures": {
+        "1": { "name": "punctuation.definition.tag.begin.vml" },
+        "2": { "name": "entity.name.tag.vml" },
+        "3": { "name": "punctuation.definition.tag.end.vml" }
+      }
+    },
+    "xml-island": {
+      "patterns": [
+        {
+          "name": "meta.tag.xml-island.vml",
+          "match": "(</?)(xml)\\s*(/?>)",
+          "captures": {
+            "1": { "name": "punctuation.definition.tag.begin.vml" },
+            "2": { "name": "entity.name.tag.vml" },
+            "3": { "name": "punctuation.definition.tag.end.vml" }
+          }
+        }
+      ]
+    },
+    "vml-attributes": {
+      "patterns": [
+        {
+          "comment": "Namespaced or plain attribute with quoted value",
+          "match": "([A-Za-z_][A-Za-z0-9_-]*(?::[A-Za-z_][A-Za-z0-9_-]*)?)\\s*(=)\\s*(\"[^\"]*\"|'[^']*')",
+          "captures": {
+            "1": { "name": "entity.other.attribute-name.vml" },
+            "2": { "name": "punctuation.separator.key-value.vml" },
+            "3": { "name": "string.quoted.vml" }
+          }
+        },
+        {
+          "comment": "Bare attribute name without value",
+          "match": "([A-Za-z_][A-Za-z0-9_-]*(?::[A-Za-z_][A-Za-z0-9_-]*)?)",
+          "captures": {
+            "1": { "name": "entity.other.attribute-name.vml" }
+          }
+        }
+      ]
+    }
+  }
+}

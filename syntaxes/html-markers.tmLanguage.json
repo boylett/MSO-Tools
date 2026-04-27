@@ -1,0 +1,32 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "scopeName": "html.markers.injection",
+  "injectionSelector": "L:text.html, L:text.html.basic, L:text.html.derivative, L:text.html.php",
+  "patterns": [
+    { "include": "#marker-close" },
+    { "include": "#marker-open" }
+  ],
+  "repository": {
+    "marker-open": {
+      "name": "comment.block.html",
+      "match": "(<!--)\\s*(\\*)\\s+(?!//)(.+?)\\s*(-->)",
+      "captures": {
+        "1": { "name": "punctuation.definition.comment.html" },
+        "2": { "name": "keyword.control.directive.marker.html" },
+        "3": { "name": "entity.name.section.marker.html" },
+        "4": { "name": "punctuation.definition.comment.html" }
+      }
+    },
+    "marker-close": {
+      "name": "comment.block.html",
+      "match": "(<!--)\\s*(\\*)\\s+(//)\\s*(.+?)\\s*(-->)",
+      "captures": {
+        "1": { "name": "punctuation.definition.comment.html" },
+        "2": { "name": "keyword.control.directive.marker.html" },
+        "3": { "name": "keyword.operator.terminator.marker.html" },
+        "4": { "name": "entity.name.section.marker.html" },
+        "5": { "name": "punctuation.definition.comment.html" }
+      }
+    }
+  }
+}

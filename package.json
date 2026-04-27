@@ -1,0 +1,103 @@
+{
+  "name": "mso-tools",
+  "displayName": "MSO Tools",
+  "description": "Syntax highlighting, hovers, diagnostics, and snippets for MSO conditional comments, MSO CSS, and VML in HTML email development.",
+  "version": "1.0.0",
+  "publisher": "boylett",
+  "license": "MIT",
+  "icon": "images/icon.png",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Linters",
+    "Snippets"
+  ],
+  "keywords": [
+    "mso",
+    "vml",
+    "outlook",
+    "email",
+    "html email",
+    "conditional comments"
+  ],
+  "main": "./dist/extension.js",
+  "activationEvents": [
+    "onLanguage:html",
+    "onLanguage:php",
+    "onLanguage:css"
+  ],
+  "contributes": {
+    "grammars": [
+      {
+        "scopeName": "mso.conditional.injection",
+        "path": "./syntaxes/mso-conditional.tmLanguage.json",
+        "injectTo": [
+          "text.html.basic",
+          "text.html.derivative",
+          "text.html.php"
+        ]
+      },
+      {
+        "scopeName": "mso.css.injection",
+        "path": "./syntaxes/mso-css.tmLanguage.json",
+        "injectTo": [
+          "source.css",
+          "text.html.basic",
+          "text.html.derivative",
+          "text.html.php"
+        ]
+      },
+      {
+        "scopeName": "vml.injection",
+        "path": "./syntaxes/vml.tmLanguage.json",
+        "injectTo": [
+          "text.html.basic",
+          "text.html.derivative",
+          "text.html.php"
+        ]
+      },
+      {
+        "scopeName": "html.markers.injection",
+        "path": "./syntaxes/html-markers.tmLanguage.json",
+        "injectTo": [
+          "text.html.basic",
+          "text.html.derivative",
+          "text.html.php"
+        ]
+      }
+    ],
+    "snippets": [
+      {
+        "language": "html",
+        "path": "./snippets/mso.code-snippets"
+      },
+      {
+        "language": "php",
+        "path": "./snippets/mso.code-snippets"
+      }
+    ],
+    "configurationDefaults": {
+      "css.lint.unknownProperties": "ignore",
+      "html.validate.styles": false
+    }
+  },
+  "scripts": {
+    "build": "node esbuild.mjs",
+    "watch": "node esbuild.mjs --watch",
+    "package": "node esbuild.mjs --production",
+    "typecheck": "tsc --noEmit",
+    "vscode:prepublish": "npm run package"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.85.0",
+    "esbuild": "^0.20.0",
+    "typescript": "^5.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/boylett/mso-tools.git"
+  }
+}

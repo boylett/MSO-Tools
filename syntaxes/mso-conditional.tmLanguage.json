@@ -1,0 +1,78 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "scopeName": "mso.conditional.injection",
+  "injectionSelector": "L:text.html, L:text.html.basic, L:text.html.derivative, L:text.html.php",
+  "patterns": [
+    { "include": "#downlevel-revealed-open" },
+    { "include": "#downlevel-revealed-close" },
+    { "include": "#downlevel-hidden-open" },
+    { "include": "#downlevel-hidden-close" }
+  ],
+  "repository": {
+    "downlevel-hidden-open": {
+      "name": "comment.block.html",
+      "begin": "(<!--)\\s*(\\[)(if)\\b",
+      "beginCaptures": {
+        "1": { "name": "punctuation.definition.comment.html" },
+        "2": { "name": "punctuation.definition.comment.html" },
+        "3": { "name": "keyword.control.directive.conditional.mso" }
+      },
+      "end": "(\\])(>)",
+      "endCaptures": {
+        "1": { "name": "punctuation.definition.comment.html" },
+        "2": { "name": "punctuation.definition.comment.html" }
+      },
+      "patterns": [ { "include": "#condition-body" } ]
+    },
+    "downlevel-hidden-close": {
+      "name": "comment.block.html",
+      "match": "(<!)(\\[)(endif)(\\])\\s*(-->)",
+      "captures": {
+        "1": { "name": "punctuation.definition.comment.html" },
+        "2": { "name": "punctuation.definition.comment.html" },
+        "3": { "name": "keyword.control.directive.conditional.mso" },
+        "4": { "name": "punctuation.definition.comment.html" },
+        "5": { "name": "punctuation.definition.comment.html" }
+      }
+    },
+    "downlevel-revealed-open": {
+      "name": "comment.block.html",
+      "begin": "(<!--)\\s*(\\[)(if)\\b(?=[^\\]]*\\]><!-->)",
+      "beginCaptures": {
+        "1": { "name": "punctuation.definition.comment.html" },
+        "2": { "name": "punctuation.definition.comment.html" },
+        "3": { "name": "keyword.control.directive.conditional.mso" }
+      },
+      "end": "(\\])(><!-->)",
+      "endCaptures": {
+        "1": { "name": "punctuation.definition.comment.html" },
+        "2": { "name": "punctuation.definition.comment.html" }
+      },
+      "patterns": [ { "include": "#condition-body" } ]
+    },
+    "downlevel-revealed-close": {
+      "name": "comment.block.html",
+      "match": "(<!--)\\s*(<!)(\\[)(endif)(\\])\\s*(-->)",
+      "captures": {
+        "1": { "name": "punctuation.definition.comment.html" },
+        "2": { "name": "punctuation.definition.comment.html" },
+        "3": { "name": "punctuation.definition.comment.html" },
+        "4": { "name": "keyword.control.directive.conditional.mso" },
+        "5": { "name": "punctuation.definition.comment.html" },
+        "6": { "name": "punctuation.definition.comment.html" }
+      }
+    },
+    "condition-body": {
+      "patterns": [
+        { "name": "keyword.operator.logical.not.mso", "match": "!" },
+        { "name": "keyword.operator.logical.and.mso", "match": "&" },
+        { "name": "keyword.operator.logical.or.mso", "match": "\\|" },
+        { "name": "punctuation.section.parens.begin.mso", "match": "\\(" },
+        { "name": "punctuation.section.parens.end.mso", "match": "\\)" },
+        { "name": "keyword.other.comparator.mso", "match": "\\b(gte|lte|gt|lt)\\b" },
+        { "name": "entity.name.tag.directive.mso", "match": "\\b(mso|IE)\\b" },
+        { "name": "constant.numeric.version.mso", "match": "\\b\\d+(?:\\.\\d+)?\\b" }
+      ]
+    }
+  }
+}
