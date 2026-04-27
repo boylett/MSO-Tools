@@ -93,11 +93,17 @@
     "watch": "node esbuild.mjs --watch",
     "package": "node esbuild.mjs --production",
     "typecheck": "tsc --noEmit",
-    "vscode:prepublish": "npm run package"
+    "vscode:prepublish": "npm run package",
+    "release": "npm run typecheck && vsce package",
+    "publish": "npm run typecheck && vsce publish",
+    "release:patch": "npm run typecheck && vsce publish patch",
+    "release:minor": "npm run typecheck && vsce publish minor",
+    "release:major": "npm run typecheck && vsce publish major"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
     "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "^3.0.0",
     "esbuild": "^0.20.0",
     "typescript": "^5.3.0"
   },
