@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+## [1.0.1] - 2026-04-27
+
+### Fixed
+
+- Match highlighting for `@media screen yahoo { ... }` blocks. VSCode's CSS word-occurrence highlighter aborts at the next `;` after the malformed media query and skips later occurrences; the extension now provides its own highlights covering each entire block (with brace balancing that skips strings and comments) when the cursor is in the prelude.
+
 ## [1.0.0] - 2026-04-27
 
 ### Added
