@@ -109,8 +109,8 @@
     "build": "node esbuild.mjs",
     "watch": "node esbuild.mjs --watch",
     "typecheck": "tsc --noEmit",
-    "package": "vsce package",
-    "release": "npm run typecheck && vsce package"
+    "package": "mkdir -p releases && vsce package --out releases",
+    "release": "npm run typecheck && mkdir -p releases && vsce package --out releases"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
