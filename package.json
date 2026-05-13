@@ -2,12 +2,28 @@
   "name": "mso-tools",
   "displayName": "MSO Tools",
   "description": "Syntax highlighting, hovers, diagnostics, and snippets for MSO conditional comments, MSO CSS, and VML in HTML email development.",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "publisher": "boylett",
   "license": "MIT",
   "icon": "images/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/boylett/mso-tools.git"
+  },
+  "bugs": {
+    "url": "https://github.com/boylett/mso-tools/issues"
+  },
+  "homepage": "https://github.com/boylett/mso-tools#readme",
   "engines": {
     "vscode": "^1.85.0"
+  },
+  "capabilities": {
+    "virtualWorkspaces": {
+      "supported": true
+    },
+    "untrustedWorkspaces": {
+      "supported": true
+    }
   },
   "categories": [
     "Programming Languages",
@@ -89,16 +105,12 @@
     }
   },
   "scripts": {
+    "vscode:prepublish": "node esbuild.mjs --production",
     "build": "node esbuild.mjs",
     "watch": "node esbuild.mjs --watch",
-    "package": "node esbuild.mjs --production",
     "typecheck": "tsc --noEmit",
-    "vscode:prepublish": "npm run package",
-    "release": "npm run typecheck && vsce package",
-    "publish": "npm run typecheck && vsce publish",
-    "release:patch": "npm run typecheck && vsce publish patch",
-    "release:minor": "npm run typecheck && vsce publish minor",
-    "release:major": "npm run typecheck && vsce publish major"
+    "package": "vsce package",
+    "release": "npm run typecheck && vsce package"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
@@ -106,9 +118,5 @@
     "@vscode/vsce": "^3.0.0",
     "esbuild": "^0.20.0",
     "typescript": "^5.3.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/boylett/mso-tools.git"
   }
 }

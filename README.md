@@ -1,6 +1,18 @@
+<div align="center">
+
+<img src="images/icon.png" alt="MSO Tools" width="120" />
+
 # MSO Tools
 
-A VSCode extension for HTML email developers working with Microsoft Outlook's MSO conditional comments, MSO CSS, VML, and Office namespace tags.
+[![Version](https://img.shields.io/badge/version-1.1.2-cb3837?style=flat-square&logo=npm&logoColor=white)](https://marketplace.visualstudio.com/items?itemName=boylett.mso-tools)
+
+Syntax highlighting, hovers, diagnostics, and snippets for HTML email developers working with Microsoft Outlook's MSO conditional comments, MSO CSS, VML, and Office namespace tags - so Outlook-only blocks stop looking like noise and start looking like Outlook-only blocks.
+
+</div>
+
+## Install
+
+Open the Extensions view in VS Code (`Ctrl/Cmd+Shift+X`), search for **MSO Tools**, hit **Install** - or grab it from the [Marketplace](https://marketplace.visualstudio.com/items?itemName=boylett.mso-tools).
 
 ## Features
 
@@ -134,4 +146,4 @@ If this is useful to you and you'd like to support its development, you can buy 
 
 ## License
 
-MIT
+MIT - see [LICENSE](LICENSE).
