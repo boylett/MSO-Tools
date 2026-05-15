@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.4] - 2026-05-15
+
+### Changed
+
+- README images now load from the public [boylett.github.io](https://github.com/boylett/boylett.github.io/tree/assets) `assets` branch (was the previous repo's raw URLs)
+
 ## [1.1.3] - 2026-05-15
 
 ### Changed

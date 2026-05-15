@@ -1,10 +1,10 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/boylett/MSO-Tools/main/images/icon.png" alt="MSO Tools" width="120" />
+<img src="https://raw.githubusercontent.com/boylett/boylett.github.io/assets/mso-tools/icon.png" alt="MSO Tools" width="120" />
 
 # MSO Tools
 
-[![Version](https://img.shields.io/badge/version-1.1.3-cb3837?style=flat-square&logo=npm&logoColor=white)](https://marketplace.visualstudio.com/items?itemName=boylett.mso-tools)
+[![Version](https://img.shields.io/badge/version-1.1.4-cb3837?style=flat-square&logo=npm&logoColor=white)](https://marketplace.visualstudio.com/items?itemName=boylett.mso-tools)
 
 Syntax highlighting, hovers, diagnostics, and snippets for HTML email developers working with Microsoft Outlook's MSO conditional comments, MSO CSS, VML, and Office namespace tags - so Outlook-only blocks stop looking like noise and start looking like Outlook-only blocks.
 
@@ -142,7 +142,7 @@ If your theme doesn't make them stand out, drop this into your `settings.json`:
 
 If this is useful to you and you'd like to support its development, you can buy me a coffee on Ko-fi - always optional, always appreciated.
 
-<a href="https://ko-fi.com/boylett"><img src="https://raw.githubusercontent.com/boylett/MSO-Tools/main/.github/ko-fi.jpg" alt="Support me on Ko-fi" width="360" /></a>
+<a href="https://ko-fi.com/boylett"><img src="https://raw.githubusercontent.com/boylett/boylett.github.io/assets/ko-fi.jpg" alt="Support me on Ko-fi" width="360" /></a>
 
 ## License
 

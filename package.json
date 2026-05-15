@@ -2,7 +2,7 @@
   "name": "mso-tools",
   "displayName": "MSO Tools",
   "description": "Syntax highlighting, hovers, diagnostics, and snippets for MSO conditional comments, MSO CSS, and VML in HTML email development.",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "publisher": "boylett",
   "license": "MIT",
   "icon": "images/icon.png",
