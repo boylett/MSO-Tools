@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.3] - 2026-05-15
+
+### Changed
+
+- README images now reference absolute `raw.githubusercontent.com` URLs so they render on the VS Code Marketplace page (vsce's relative-path rewriter skips over `<img>` tags inside HTML block elements like `<div align="center">`)
+
 ## [1.1.2] - 2026-05-13
 
 ### Changed
